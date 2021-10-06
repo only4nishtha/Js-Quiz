@@ -61,7 +61,7 @@ var questions = [{
         b: "JavaScript Object Network",
         c: "JavaScript Output Name",
     },
-    answer: "b"
+    answer: "a"
 },
 ];
 
@@ -83,11 +83,11 @@ function play(question, answer, options){
     var username = readlineSync.question("Choose your Option: ");
 
     if(username.toLowerCase() === answer) {
-        console.log("Right!");
+        console.log("\nRight!");
         score++;
     }
     else {
-        console.log("Wrong!");
+        console.log("\nWrong!");
     }
 
     console.log("*--------------------------*")
@@ -95,7 +95,7 @@ function play(question, answer, options){
     console.log("*--------------------------*")
 }
 
-function showScores(username, score){
+function showScores(username){
     console.log("\nWOHOO!!! You scored: " + score);
 
     if(highScore.scores <= score){
