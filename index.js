@@ -105,3 +105,5 @@ function showScores(username, score){
     console.log("\nCheck out the high scores!");
     console.log(highScore.name + " : " + highScore.scores);
 }
+
+welcome();
