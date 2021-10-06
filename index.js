@@ -88,12 +88,12 @@ function play(question, answer, options){
     }
     else {
         console.log("\nOOPS!! You're Wrong");
+        console.log("The correct answer is: " + answer);
     }
 
-    console.log("The correct answer is: " + answer);
-    console.log("\n*--------------------------*")
-    console.log("Current Score: " + score);
-    console.log("*--------------------------*")
+    console.log("\n*-------------------------------*")
+    console.log("\t\tCURRENT SCORE: " + score);
+    console.log("*-------------------------------*")
 }
 
 function showScores(username){
