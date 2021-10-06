@@ -3,7 +3,7 @@ var readlineSync = require("readline-sync");
 function welcome() {
     var username = readlineSync.question("What's your name? ");
 
-    console.log("Welcome" + username + "\nTime to Test your Tech Quotient!!");
+    console.log("\nWelcome " + username + "\nTime to Test your Tech Quotient!!\n");
     game(username);
 }
 
@@ -17,7 +17,7 @@ var highScore = {
 // Array of Objects 
 
 var questions = [{
-    question: "Which of these tags are all <table> tags?",
+    question: "\nWhich of these tags are all <table> tags?",
     options: {
         a: "<table><head><tfoot>",
         b: "<table><th><td>",
@@ -26,7 +26,7 @@ var questions = [{
     answer: "b"
 },
 {
-    question: "Which of the following can JavaSript do?",
+    question: "\nWhich of the following can JavaSript do?",
     options: {
         a: "Js can react to events",
         b: "Js can manipulate HTML elements",
@@ -36,7 +36,7 @@ var questions = [{
     answer: "d"
 },
 {
-    question: "Which keyword is used to declare variables in JavaScript?",
+    question: "\nWhich keyword is used to declare variables in JavaScript?",
     options: {
         a: "let",
         b: "int",
@@ -46,7 +46,7 @@ var questions = [{
     answer: "d"
 },
 {
-    question: "For what value of target attribute does the link open in new window?",
+    question: "\nFor what value of target attribute does the link open in new window?",
     options: {
         a: "new",
         b: "_blank",
@@ -55,7 +55,7 @@ var questions = [{
     answer: "b"
 },
 {
-    question: "JSON stands for?",
+    question: "\nJSON stands for?",
     options: {
         a: "JavaScript Object Notation",
         b: "JavaScript Object Network",
@@ -96,7 +96,7 @@ function play(question, answer, options){
 }
 
 function showScores(username, score){
-    console.log("WOHOO!!! You scored: " + score);
+    console.log("\nWOHOO!!! You scored: " + score);
 
     if(highScore.scores <= score){
         highScore.name = username;
