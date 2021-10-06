@@ -83,14 +83,15 @@ function play(question, answer, options){
     var username = readlineSync.question("Choose your Option: ");
 
     if(username.toLowerCase() === answer) {
-        console.log("\nRight!");
+        console.log("\nYEAH!! You're Right");
         score++;
     }
     else {
-        console.log("\nWrong!");
+        console.log("\nOOPS!! You're Wrong");
     }
 
-    console.log("*--------------------------*")
+    console.log("The correct answer is: " + answer);
+    console.log("\n*--------------------------*")
     console.log("Current Score: " + score);
     console.log("*--------------------------*")
 }
