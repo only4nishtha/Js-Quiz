@@ -96,7 +96,7 @@ function play(question, answer, options){
 }
 
 function showScores(username, score){
-    console.log("WOHOO!!! You scored: ", score);
+    console.log("WOHOO!!! You scored: " + score);
 
     if(highScore.scores <= score){
         highScore.name = username;
