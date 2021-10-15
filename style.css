@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+body{
+	font-size: 20px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #fff;
+	background-color: black;
+	margin: 0;
+}
+h2{
+	margin: 1rem 2rem;
+	color: rgb(55, 231, 187);
+}
+.question{
+	font-weight: 600;
+}
+.answers {
+  margin-bottom: 20px;
+}
+.answers label{
+  display: block;
+}
+button{
+	font-size: 20px;
+	background-color: yellow;
+	color: red;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: 30px;
+	border-color: orangered;
+	border-radius: 10px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+button:hover{
+	background-color: orange;
+}  
+.container{
+	width: 60%;
+	display: flex;
+	/* justify-content: center; */
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
+.userName-label{
+	font-size: 1rem;
+}
+#userName{
+	border: none;
+	border-bottom: 3px solid yellow;
+	background: none;
+	outline: none;
+	color: #fff;
+}
+.user{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.user label{
+	margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+	.user{
+		width: 100%;	
+	}
+}
+
+#results{
+	display: flex;
+	align-items: center;
+}
