@@ -110,43 +110,51 @@ function showResults() {
         const selector = `input[name=question${questionNumber}]:checked`;
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-        // color the right answers green
-        for (var i = 0; i < 4; i++) {
-            if (answerContainer.querySelectorAll('input')[i].value == currentQuestion.answer) {
-                answerContainer.querySelectorAll('label')[i].style.color = "lightgreen";
-            }
-        }
-
         // if answer is correct
         if (userAnswer === currentQuestion.answer) {
             // add to the number of correct answers
             score++;
-        }
 
+            // color the answers green
+            answerContainers[questionNumber].style.color = "#17D482";
+        }
         // if answer is wrong or blank
         else {
-            // color the wrong answers red
-            for (var i = 0; i < 4; i++) {
-                if (answerContainers[questionNumber].querySelectorAll('input')[i].checked) {
-                    answerContainers[questionNumber].querySelectorAll('label')[i].style.color = "red";
-                }
-            }
+            // color the answers red
+            answerContainers[questionNumber].style.color = "red";
         }
-});
+    });
 
-// show number of correct answers out of total
-resultsContainer.innerHTML = `Wooho! You got ${score} out of ${questions.length} correct!`;
+    // show number of correct answers out of total
+    // resultsContainer.innerHTML = `Wooho! You got ${score} out of ${questions.length} correct!`;
+    
+    if(score == 0){
+        resultsContainer.innerHTML = `<p>Alas! You got ${score} out of ${questions.length} correct!! Work more on your skills. Cheers!</p> ` ;
+    }
+    if(score == 1){
+        resultsContainer.innerHTML = `<p>⭐  Hey! You got ${score} out of ${questions.length} correct!! Little more push. Go for it! </p> ` ;
+    }
+    if(score == 2){
+        resultsContainer.innerHTML = `<p>⭐⭐  Hey! You got ${score} out of ${questions.length} correct!! Little more push. Go for it! </p> ` ;
+    }
+    if(score == 3){
+        resultsContainer.innerHTML = `<p>⭐⭐⭐  Wooho! You got ${score} out of ${questions.length} correct!! Just a little revision. </p> ` ;
+    }
+    if(score == 4){
+        resultsContainer.innerHTML = `<p>⭐⭐⭐⭐  Wooho! You got ${score} out of ${questions.length} correct!! Just a little revision. </p> ` ;
+    }
+    if(score == 5){
+        resultsContainer.innerHTML = `<p>⭐⭐⭐⭐⭐  OMG! You got ${score} out of ${questions.length} correct!!  Ace the advanced level too.` ;
+    }
 }
 
 // Event listeners
-
-// enter.addEventListener("click", () => {
-//     quizContainer.style.display = "none";
-//     quizContainer.style.display = "block";
-    buildQuiz();
-    startTimer();
-
-// });
+quizContainer.style.color="#602BC1";
+resultsContainer.style.color="#E81CEE";
+//6DB49B
+//9799e9
+buildQuiz();
+startTimer();
 
 submitButton.addEventListener("click", showResults);
 
@@ -160,7 +168,7 @@ restartGame.addEventListener("click", () => {
 
 // timer
 function startTimer() {
-    var time = new Date().getTime() + 1000 * 60 * 3;
+    var time = new Date().getTime() + 1000 * 90 ;
     var interval = setInterval(function () {
         var now = new Date().getTime();
         var distance = time - now;
