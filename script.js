@@ -4,6 +4,7 @@ const submitButton = document.getElementById("submit");
 const userName = document.getElementById("userName");
 const welcomeText = document.querySelector("span");
 const restartGame = document.getElementById("new");
+var timer = document.getElementById("timer");
 
 // array of questions
 const questions = [{
@@ -143,6 +144,8 @@ resultsContainer.innerHTML = `Wooho! You got ${score} out of ${questions.length}
 //     quizContainer.style.display = "none";
 //     quizContainer.style.display = "block";
     buildQuiz();
+    startTimer();
+
 // });
 
 submitButton.addEventListener("click", showResults);
@@ -154,3 +157,21 @@ userName.addEventListener("input", () => {
 restartGame.addEventListener("click", () => {
     window.location.reload();
 });
+
+// timer
+function startTimer() {
+    var time = new Date().getTime() + 1000 * 60 * 3;
+    var interval = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = time - now;
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        timer.innerHTML = minutes + " : " + seconds;
+        if (distance <= 0) {
+            clearInterval(interval);
+            timer.innerHTML = "00:00";
+            window.alert('Time Up!');
+            showResults();
+        }
+    }, 1000);
+}
