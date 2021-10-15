@@ -1,1 +1,2 @@
-[Click Here](https://replit.com/@NishthaAgarwal1/Js-Quiz#index.js) to check out the project!!
+[Click Here to check out the project!!](https://only4nishtha.github.io/Js-Quiz/)
+[Link for pertminal execution](https://replit.com/@NishthaAgarwal1/Js-Quiz#index.js) to check out the project!!
